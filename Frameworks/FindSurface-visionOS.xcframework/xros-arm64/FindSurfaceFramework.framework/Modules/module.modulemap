@@ -1,0 +1,11 @@
+framework module FindSurfaceFramework {
+  umbrella header "FindSurfaceFramework.h"
+  export *
+
+  module * { export * }
+}
+
+module FindSurfaceFramework.Swift {
+  header "FindSurfaceFramework-Swift.h"
+  requires objc
+}

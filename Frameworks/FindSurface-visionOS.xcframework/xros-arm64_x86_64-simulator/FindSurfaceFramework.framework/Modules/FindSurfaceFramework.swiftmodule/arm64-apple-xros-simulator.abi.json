@@ -1,0 +1,1071 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FindSurfaceFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "System",
+        "printedName": "System",
+        "declKind": "Import",
+        "moduleName": "FindSurfaceFramework"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FindSurface",
+        "printedName": "FindSurface",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "FindSurfaceError",
+            "printedName": "FindSurfaceError",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "invalidOperation",
+                "printedName": "invalidOperation",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(FindSurfaceFramework.FindSurface.FindSurfaceError.Type) -> (Swift.String) -> FindSurfaceFramework.FindSurface.FindSurfaceError",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.String) -> FindSurfaceFramework.FindSurface.FindSurfaceError",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FindSurfaceError",
+                            "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError",
+                            "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FindSurfaceError",
+                            "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError",
+                            "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO16invalidOperationyAESScAEmF",
+                "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE0aB5ErrorO16invalidOperationyAESScAEmF",
+                "moduleName": "FindSurfaceFramework"
+              },
+              {
+                "kind": "Var",
+                "name": "invalidArgument",
+                "printedName": "invalidArgument",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(FindSurfaceFramework.FindSurface.FindSurfaceError.Type) -> (Swift.String) -> FindSurfaceFramework.FindSurface.FindSurfaceError",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.String) -> FindSurfaceFramework.FindSurface.FindSurfaceError",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FindSurfaceError",
+                            "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError",
+                            "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FindSurfaceError",
+                            "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError",
+                            "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO15invalidArgumentyAESScAEmF",
+                "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE0aB5ErrorO15invalidArgumentyAESScAEmF",
+                "moduleName": "FindSurfaceFramework"
+              },
+              {
+                "kind": "Var",
+                "name": "failedMemoryAllocation",
+                "printedName": "failedMemoryAllocation",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(FindSurfaceFramework.FindSurface.FindSurfaceError.Type) -> FindSurfaceFramework.FindSurface.FindSurfaceError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FindSurfaceError",
+                        "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError",
+                        "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FindSurfaceError",
+                            "printedName": "FindSurfaceFramework.FindSurface.FindSurfaceError",
+                            "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO22failedMemoryAllocationyA2EmF",
+                "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE0aB5ErrorO22failedMemoryAllocationyA2EmF",
+                "moduleName": "FindSurfaceFramework"
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE0aB5ErrorO",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE0aB5ErrorO",
+            "moduleName": "FindSurfaceFramework",
+            "isFromExtension": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Error",
+                "printedName": "Error",
+                "usr": "s:s5ErrorP",
+                "mangledName": "$ss5ErrorP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Sendable",
+                "printedName": "Sendable",
+                "usr": "s:s8SendableP",
+                "mangledName": "$ss8SendableP"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "setPointCloudData",
+            "printedName": "setPointCloudData(_:pointCount:pointStride:useDoublePrecision:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UnsafeRawPointer",
+                "printedName": "Swift.UnsafeRawPointer",
+                "usr": "s:SV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE17setPointCloudData_10pointCount0H6Stride18useDoublePrecisionySV_S2iSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE17setPointCloudData_10pointCount0H6Stride18useDoublePrecisionySV_S2iSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findSurface",
+            "printedName": "findSurface(featureType:seedIndex:seedRadius:rmsError:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FeatureType",
+                "printedName": "FindSurfaceFramework.FindSurface.FeatureType",
+                "usr": "c:@E@FindSurfaceFeatureType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "paramValueOwnership": "InOut",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE04findB011featureType9seedIndex0G6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSo0ab7FeatureF0V_SiS2fzSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE04findB011featureType9seedIndex0G6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSo0ab7FeatureF0V_SiS2fzSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findSurface",
+            "printedName": "findSurface(featureType:seedIndex:seedRadius:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "FeatureType",
+                "printedName": "FindSurfaceFramework.FindSurface.FeatureType",
+                "usr": "c:@E@FindSurfaceFeatureType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE04findB011featureType9seedIndex0G6Radius18requestInlierFlagsSo0aB6ResultCSgSo0ab7FeatureF0V_SiSfSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE04findB011featureType9seedIndex0G6Radius18requestInlierFlagsSo0aB6ResultCSgSo0ab7FeatureF0V_SiSfSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findPlane",
+            "printedName": "findPlane(seedIndex:seedRadius:rmsError:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "paramValueOwnership": "InOut",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE9findPlane9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE9findPlane9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findPlane",
+            "printedName": "findPlane(seedIndex:seedRadius:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE9findPlane9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE9findPlane9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findSphere",
+            "printedName": "findSphere(seedIndex:seedRadius:rmsError:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "paramValueOwnership": "InOut",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE10findSphere9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE10findSphere9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findSphere",
+            "printedName": "findSphere(seedIndex:seedRadius:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE10findSphere9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE10findSphere9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findCylinder",
+            "printedName": "findCylinder(seedIndex:seedRadius:rmsError:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "paramValueOwnership": "InOut",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE12findCylinder9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE12findCylinder9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findCylinder",
+            "printedName": "findCylinder(seedIndex:seedRadius:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE12findCylinder9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE12findCylinder9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findCone",
+            "printedName": "findCone(seedIndex:seedRadius:rmsError:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "paramValueOwnership": "InOut",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE8findCone9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE8findCone9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findCone",
+            "printedName": "findCone(seedIndex:seedRadius:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE8findCone9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE8findCone9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findTorus",
+            "printedName": "findTorus(seedIndex:seedRadius:rmsError:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "paramValueOwnership": "InOut",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE9findTorus9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE9findTorus9seedIndex0F6Radius8rmsError18requestInlierFlagsSo0aB6ResultCSgSi_S2fzSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findTorus",
+            "printedName": "findTorus(seedIndex:seedRadius:requestInlierFlags:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FindSurfaceFramework.FindSurfaceResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FindSurfaceResult",
+                    "printedName": "FindSurfaceFramework.FindSurfaceResult",
+                    "usr": "c:objc(cs)FindSurfaceResult"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:So11FindSurfaceC0aB9FrameworkE9findTorus9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "mangledName": "$sSo11FindSurfaceC0aB9FrameworkE9findTorus9seedIndex0F6Radius18requestInlierFlagsSo0aB6ResultCSgSi_SfSbtKF",
+            "moduleName": "FindSurfaceFramework",
+            "declAttributes": [
+              "Inline",
+              "Inlinable"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)FindSurface",
+        "moduleName": "FindSurfaceFramework",
+        "isOpen": true,
+        "objc_name": "FindSurface",
+        "declAttributes": [
+          "ObjC",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 373,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1574,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2652,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2720,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3102,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3480,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3883,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4265,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4677,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5067,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5465,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5839,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6237,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curvsurf-sgkim\/Documents\/Development\/dev\/lib\/source-visionOS\/Library\/iOS\/FindSurfaceFramework\/FindSurfaceFramework\/FindSurfaceExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6615,
+      "length": 5,
+      "value": "false"
+    }
+  ]
+}

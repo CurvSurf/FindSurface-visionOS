@@ -1,0 +1,175 @@
+//
+//  GeometryObject.swift
+//
+//
+//  Created by CurvSurf-SGKim on 6/14/24.
+//
+
+import Foundation
+import simd
+
+protocol MatrixCodingKey: CodingKey {
+    static var column0: Self { get }
+    static var column1: Self { get }
+    static var column2: Self { get }
+    static var column3: Self { get }
+}
+
+public protocol GeometryObject {
+    
+    /// The 4x4 matrix that contains the object's orientation and position.
+    var extrinsics: simd_float4x4 { get set }
+}
+
+public extension GeometryObject {
+    
+    /// The basis vector of X axis of the object's model space.
+    var xAxis: simd_float3 {
+        get { extrinsics.basisX }
+        set { extrinsics.basisX = newValue }
+    }
+    
+    /// The basis vector of Y axis of the object's model space.
+    var yAxis: simd_float3 {
+        get { extrinsics.basisY }
+        set { extrinsics.basisY = newValue }
+    }
+    
+    /// The basis vector of Z axis of the object's model space.
+    var zAxis: simd_float3 {
+        get { extrinsics.basisZ }
+        set { extrinsics.basisZ = newValue }
+    }
+    
+    /// The position of the object.
+    var position: simd_float3 {
+        get { extrinsics.position }
+        set { extrinsics.position = newValue }
+    }
+    
+    /// The transformation matrix that converts to the object's model space.
+    var transform: simd_float4x4 {
+        .transform(xAxis: xAxis, yAxis: yAxis, zAxis: zAxis, origin: position)
+    }
+}
+
+func encodeMatrix<C>(_ matrix: simd_float4x4, to container: inout KeyedEncodingContainer<C>) throws where C: MatrixCodingKey {
+    try container.encode(matrix.columns.0, forKey: C.column0)
+    try container.encode(matrix.columns.1, forKey: C.column1)
+    try container.encode(matrix.columns.2, forKey: C.column2)
+    try container.encode(matrix.columns.3, forKey: C.column3)
+}
+
+func decodeMatrix<C>(from container: KeyedDecodingContainer<C>) throws -> simd_float4x4 where C: MatrixCodingKey {
+    let c0 = try container.decode(simd_float4.self, forKey: C.column0)
+    let c1 = try container.decode(simd_float4.self, forKey: C.column1)
+    let c2 = try container.decode(simd_float4.self, forKey: C.column2)
+    let c3 = try container.decode(simd_float4.self, forKey: C.column3)
+    return .init(c0, c1, c2, c3)
+}
+
+func combineMatrix(_ matrix: simd_float4x4, into hasher: inout Hasher) {
+    hasher.combine(matrix.columns.0)
+    hasher.combine(matrix.columns.1)
+    hasher.combine(matrix.columns.2)
+    hasher.combine(matrix.columns.3)
+}
+
+internal extension simd_float4x4 {
+    
+    var basisX: simd_float3 {
+        get { simd_make_float3(columns.0) }
+        set { columns.0 = simd_float4(newValue, columns.0.w) }
+    }
+    
+    var basisY: simd_float3 {
+        get { simd_make_float3(columns.1) }
+        set { columns.1 = simd_float4(newValue, columns.1.w) }
+    }
+    
+    var basisZ: simd_float3 {
+        get { simd_make_float3(columns.2) }
+        set { columns.2 = simd_float4(newValue, columns.2.w) }
+    }
+    
+    var position: simd_float3 {
+        get { simd_make_float3(columns.3) }
+        set { columns.3 = simd_float4(newValue, columns.3.w) }
+    }
+    
+    /// makes an extrinsic matrix that contains an object's orientation and location.
+    static func extrinsics(xAxis: simd_float3,
+                           yAxis: simd_float3,
+                           zAxis: simd_float3,
+                           position: simd_float3 = .zero) -> simd_float4x4 {
+        return .init(.init(xAxis, 0),
+                     .init(yAxis, 0),
+                     .init(zAxis, 0),
+                     .init(position, 1))
+    }
+    
+    /// makes an extrinsic matrix that contains an object's location.
+    static func extrinsics(position: simd_float3) -> simd_float4x4 {
+        return .init(.init(1, 0, 0, 0),
+                     .init(0, 1, 0, 0),
+                     .init(0, 0, 1, 0),
+                     .init(position, 1))
+    }
+    
+    /// makes an extrinsic matrix that contains an object's orientation and location.
+    /// - note: the Y axis and Z axis are arbitrarily determined by attempting cross products with the given `xAxis`.
+    static func extrinscis(xAxis: simd_float3, position: simd_float3 = .zero) -> simd_float4x4 {
+        let xAxis = normalize(xAxis)
+        var yAxis = simd_float3(0, 1, 0)
+        var zAxis = simd_float3(0, 0, 1)
+        zAxis = if xAxis != yAxis {
+            normalize(cross(xAxis, yAxis))
+        } else {
+            normalize(cross(xAxis, zAxis))
+        }
+        yAxis = normalize(cross(zAxis, xAxis))
+        return .extrinsics(xAxis: xAxis, yAxis: yAxis, zAxis: zAxis, position: position)
+    }
+    
+    /// makes an extrinsic matrix that contains an object's orientation and location.
+    /// - note: the X axis and Z axis are arbitrarily determined by attempting cross products with the given `yAxis`.
+    static func extrinsics(yAxis: simd_float3, position: simd_float3 = .zero) -> simd_float4x4 {
+        var xAxis = simd_float3(1, 0, 0)
+        let yAxis = normalize(yAxis)
+        var zAxis = simd_float3(0, 0, 1)
+        xAxis = if yAxis != zAxis {
+            normalize(cross(yAxis, zAxis))
+        } else {
+            normalize(cross(yAxis, xAxis))
+        }
+        zAxis = normalize(cross(xAxis, yAxis))
+        return .extrinsics(xAxis: xAxis, yAxis: yAxis, zAxis: zAxis, position: position)
+    }
+    
+    /// makes an extrinsic matrix that contains an object's orientation and location.
+    /// - note: the X axis and Y axis are arbitrarily determined by attempting cross products with the given `zAxis`.
+    static func extrinsics(zAxis: simd_float3, position: simd_float3 = .zero) -> simd_float4x4 {
+        var xAxis = simd_float3(1, 0, 0)
+        var yAxis = simd_float3(0, 1, 0)
+        let zAxis = normalize(zAxis)
+        yAxis = if zAxis != xAxis {
+            normalize(cross(zAxis, xAxis))
+        } else {
+            normalize(cross(zAxis, yAxis))
+        }
+        xAxis = normalize(cross(yAxis, zAxis))
+        return .extrinsics(xAxis: xAxis, yAxis: yAxis, zAxis: zAxis, position: position)
+    }
+    
+    /// makes a transformation matrix that converts coordinates to a model coordinate system defined by `xAxis`, `yAxis`, `zAxis`, and `origin`.
+    static func transform(xAxis: simd_float3,
+                          yAxis: simd_float3,
+                          zAxis: simd_float3,
+                          origin: simd_float3 = .zero) -> simd_float4x4 {
+        return .init(rows: [.init(xAxis, -dot(origin, xAxis)),
+                            .init(yAxis, -dot(origin, yAxis)),
+                            .init(zAxis, -dot(origin, zAxis)),
+                            .init(0, 0, 0, 1)])
+    }
+}
+
