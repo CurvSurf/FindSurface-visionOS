@@ -6,6 +6,13 @@
 
 **FindSurface-visionOS** is a Swift package of FindSurface™ library, of which interface is modified to allow you to use its functionalities.
 
+## Samples
+
+The following is a sample project to help you get started to make your application with the package (more samples are to be added in the future):
+
+- [FindSurface-RealityKit-visionOS](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS)
+
+
 ## How to install
 
 ### Adding this package as a Dependency
