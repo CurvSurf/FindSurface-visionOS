@@ -48,8 +48,8 @@ About the framework, refer to the following statement:
 ````
 Copyright (c) 2024 CurvSurf, Inc. All rights reserved.
 
-The framework `FindSurfaceFramework`'s ownership is solely on CurvSurf, Inc. 
-and anyone can use it for non-commercial purposes. 
+The framework `FindSurface-visionOS.xcframework` and `FindSurfaceFramework.framework`'s 
+ownership is solely on CurvSurf, Inc. and anyone can use it for non-commercial purposes. 
 Contact to support@curvsurf.com for commercial use of the library.
 ````
 
