@@ -150,7 +150,6 @@ public final class FindSurface {
     /// quickly returning `nil` if one haven't finished yet.
     ///
     /// - returns: `Result` if FindSurface was available, `nil` otherwise.
-    @MainActor
     public func perform(pickPoint: () async -> ([simd_float3], Int)?) async throws -> Result? {
         
         guard task == nil else { return nil }
