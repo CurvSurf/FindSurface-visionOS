@@ -6,6 +6,8 @@
 
 **FindSurface-visionOS** is a Swift package of FindSurface™ library, of which interface is modified to allow you to use its functionalities.
 
+> **NOTE**: `FindSurfaceFramework` (including `FindSurface-visionOS`) provides its functionality for non-commercial purposes within Apple Vision Pro devices. It is internally limited to process input point clouds of **50k points or less**. For commercial uses or use cases that require more than 50k points, please contact us at contact@curvsurf.com.
+
 ## Samples
 
 The following is a sample project to help you get started to make your application with the package (more samples are to be added in the future):
