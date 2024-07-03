@@ -60,7 +60,7 @@ From our continuous testing of FindSurface in various environments on Apple Visi
 - Lat. Ext.: 10
 - Rad. Exp.: 5
 
-As an Apple Vision Pro user, you only need to set the seed radius proportional to the size of the object using the above parameter presets as default. For planes having small areas or short cylinders/cones, it is recommended to set the lateral extension to below `5`. To detect or measure an object smaller than 1 meter (although we don't recommend it), set the radial expansion to `4`.
+As an Apple Vision Pro user, you only need to set the seed radius proportional to the size of the object using the above parameter presets as default. For planes having small areas or short cylinders/cones, it is recommended to set the lateral extension to below `5`. To detect or measure an object smaller than 1 meter (although we don't recommend it), set the radial expansion to `4` or less.
 
 
 ## About License
