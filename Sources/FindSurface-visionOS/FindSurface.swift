@@ -181,10 +181,10 @@ public final class FindSurface {
         context.smartConversionOptions = .init(conversionOptions)
         
         do {
-            let error = try context.setPointCloudData(pointcloud,
-                                                      pointCount: pointcloud.count,
-                                                      pointStride: MemoryLayout<simd_float3>.stride,
-                                                      useDoublePrecision: false)
+            try context.setPointCloudData(pointcloud,
+                                          pointCount: pointcloud.count,
+                                          pointStride: MemoryLayout<simd_float3>.stride,
+                                          useDoublePrecision: false)
         } catch {
             guard let error = error as? RawFindSurface.FindSurfaceError else { throw error }
             switch error {
