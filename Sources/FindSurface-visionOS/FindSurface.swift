@@ -205,8 +205,14 @@ public final class FindSurface {
                                                        seedIndex: index,
                                                        seedRadius: seedRadius,
                                                        rmsError: &rmsError,
-                                                       requestInlierFlags: true),
-                  (targetFeature == .any || result.type == .init(targetFeature)) else {
+                                                       requestInlierFlags: true) else {
+                return .none(rmsError)
+            }
+            guard targetFeature == .any ||
+                    result.type == .init(targetFeature) ||
+                    (targetFeature == .torus && result.type == .sphere && conversionOptions.contains(.torusToSphere)) ||
+                    (targetFeature == .torus && result.type == .cylinder && conversionOptions.contains(.torusToCylinder)) ||
+                    (targetFeature == .cone && result.type == .cylinder && conversionOptions.contains(.coneToCylinder)) else {
                 return .none(rmsError)
             }
             
