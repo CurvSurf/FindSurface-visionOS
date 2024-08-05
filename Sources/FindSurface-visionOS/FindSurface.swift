@@ -146,8 +146,8 @@ public final class FindSurface {
     
     /// Invokes FindSurface if available.
     ///
-    /// Due to the nature of FindSurface's internal implementation, this method internally check if the previous invocation is finished,
-    /// quickly returning `nil` if one haven't finished yet.
+    /// Due to the nature of FindSurface's internal implementation, this method internally check if a previous invocation has  finished,
+    /// quickly returning `nil` if one hasn't finished yet.
     ///
     /// - returns: `Result` if FindSurface was available, `nil` otherwise.
     public func perform(pickPoint: () async -> ([simd_float3], Int)?) async throws -> Result? {
