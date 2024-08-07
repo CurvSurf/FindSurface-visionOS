@@ -101,4 +101,11 @@ public extension Cylinder {
             axis *= -1
         }
     }
+    
+    /// Rotates the model space, so that the cylinder's `axis` is as close as possible to the `upwardDirection`.
+    func aligned(relativeTo upwardDirection: simd_float3 = .init(0, 1, 0)) -> Cylinder {
+        var this = self
+        this.align(relativeTo: upwardDirection)
+        return this
+    }
 }
