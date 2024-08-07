@@ -118,7 +118,7 @@ internal extension simd_float4x4 {
     
     /// makes an extrinsic matrix that contains an object's orientation and location.
     /// - note: the Y axis and Z axis are arbitrarily determined by attempting cross products with the given `xAxis`.
-    static func extrinscis(xAxis: simd_float3, position: simd_float3 = .zero) -> simd_float4x4 {
+    static func extrinsics(xAxis: simd_float3, position: simd_float3 = .zero) -> simd_float4x4 {
         let xAxis = normalize(xAxis)
         var yAxis = simd_float3(0, 1, 0)
         var zAxis = simd_float3(0, 0, 1)
