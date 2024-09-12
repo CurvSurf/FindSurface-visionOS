@@ -10,10 +10,16 @@
 
 ## Samples
 
-The following is a sample project to help you get started to make your application with the package (more samples are to be added in the future):
+The followings are sample project repositories to help you get started to make your application with the package (more samples are to be added in the future):
 
 - [FindSurface-RealityKit-visionOS](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS)
 - [FindSurface-RealityKit-visionOS-Response-to-Request](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS-Response-to-Request)
+
+To see how this package's APIs are called in each sample project, please refer to the following links:
+
+- [FindSurface-RealityKit-visionOS (Source file)](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS/blob/86024c6ea42997d06bc3aa016ee275fad770e46c/FindSurfaceST-visionOS/Views/ImmersiveView.swift#L160-L239)
+- [FindSurface-RealityKit-visionOS-Response-to-Request (Source file)](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS-Response-to-Request/blob/c8d318c7bb9dc9b99caf18168553e3b5b6c558b7/FindSurfaceRR-visionOS/Views/ImmersiveView.swift#L45-L218).
+
 
 ## How to install
 
