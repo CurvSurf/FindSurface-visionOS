@@ -19,46 +19,52 @@ public struct Cylinder: GeometryObject {
     /// The radius of the cylinder.
     public var radius: Float
     
+    private var _extrinsics: [simd_float4]
+    
     /// The 4x4 matrix that contains the cylinder's orientation and position.
-    public var extrinsics: simd_float4x4
+    public var extrinsics: simd_float4x4 {
+        get { .init(from: _extrinsics) }
+        set { _extrinsics = newValue.columnArray }
+    }
     
     /// Initializes `Cylinder` with the given `height`, `radius` and extrinsic parameters (`extrinsics`.)
     public init(height: Float, radius: Float, extrinsics: simd_float4x4) {
         self.height = height
         self.radius = radius
-        self.extrinsics = extrinsics
+//        self.extrinsics = extrinsics
+        self._extrinsics = extrinsics.columnArray
     }
 }
 
-extension Cylinder: Hashable, Codable {
-    
-    enum CodingKeys: MatrixCodingKey {
-        case height, radius
-        case column0, column1, column2, column3
-    }
-    
-    public init(from decoder: any Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let height = try container.decode(Float.self, forKey: .height)
-        let radius = try container.decode(Float.self, forKey: .radius)
-        let extrinsics = try decodeMatrix(from: container)
-        self.init(height: height, radius: radius,
-                  extrinsics: extrinsics)
-    }
-    
-    public func encode(to encoder: any Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(height, forKey: .height)
-        try container.encode(radius, forKey: .radius)
-        try encodeMatrix(extrinsics, to: &container)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(height)
-        hasher.combine(radius)
-        combineMatrix(extrinsics, into: &hasher)
-    }
-}
+//extension Cylinder: Hashable, Codable {
+//    
+//    enum CodingKeys: MatrixCodingKey {
+//        case height, radius
+//        case column0, column1, column2, column3
+//    }
+//    
+//    public init(from decoder: any Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        let height = try container.decode(Float.self, forKey: .height)
+//        let radius = try container.decode(Float.self, forKey: .radius)
+//        let extrinsics = try decodeMatrix(from: container)
+//        self.init(height: height, radius: radius,
+//                  extrinsics: extrinsics)
+//    }
+//    
+//    public func encode(to encoder: any Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(height, forKey: .height)
+//        try container.encode(radius, forKey: .radius)
+//        try encodeMatrix(extrinsics, to: &container)
+//    }
+//    
+//    public func hash(into hasher: inout Hasher) {
+//        hasher.combine(height)
+//        hasher.combine(radius)
+//        combineMatrix(extrinsics, into: &hasher)
+//    }
+//}
 
 public extension Cylinder {
     

@@ -16,41 +16,48 @@ public struct Sphere: GeometryObject {
     /// The radius of the sphere.
     public var radius: Float
     
+    private var _extrinsics: [simd_float4]
+    
     /// The 4x4 matrix that contains the sphere's orientation and position.
-    public var extrinsics: simd_float4x4
+    public var extrinsics: simd_float4x4 {
+        get { .init(from: _extrinsics) }
+        set { _extrinsics = newValue.columnArray }
+    }
     
     /// Initializes `Sphere` with `radius` and extrinsic parameters (`extrinsics`.)
     public init(radius: Float, extrinsics: simd_float4x4) {
         self.radius = radius
-        self.extrinsics = extrinsics
+//        self.extrinsics = extrinsics
+        self._extrinsics = extrinsics.columnArray
     }
 }
 
-extension Sphere: Hashable, Codable {
-    
-    enum CodingKeys: MatrixCodingKey {
-        case radius
-        case column0, column1, column2, column3
-    }
-    
-    public init(from decoder: any Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let radius = try container.decode(Float.self, forKey: .radius)
-        let extrinsics = try decodeMatrix(from: container)
-        self.init(radius: radius, extrinsics: extrinsics)
-    }
-    
-    public func encode(to encoder: any Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(radius, forKey: .radius)
-        try encodeMatrix(extrinsics, to: &container)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(radius)
-        combineMatrix(extrinsics, into: &hasher)
-    }
-}
+//extension Sphere: Hashable, Codable {
+//    
+//    enum CodingKeys: MatrixCodingKey {
+//        case radius
+//        case column0, column1, column2, column3
+//    }
+//    
+//    public init(from decoder: any Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        let radius = try container.decode(Float.self, forKey: .radius)
+//        let extrinsics = try decodeMatrix(from: container)
+//        self.init(radius: radius, extrinsics: extrinsics)
+//    }
+//    
+//    public func encode(to encoder: any Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(radius, forKey: .radius)
+//        try encodeMatrix(extrinsics, to: &container)
+//    }
+//    
+//    public func hash(into hasher: inout Hasher) {
+//        hasher.combine(radius)
+//        combineMatrix(extrinsics, into: &hasher)
+//    }
+//}
+//}
 
 public extension Sphere {
     

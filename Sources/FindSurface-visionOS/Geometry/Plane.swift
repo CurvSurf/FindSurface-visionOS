@@ -19,46 +19,51 @@ public struct Plane: GeometryObject {
     /// The height of the plane.
     public var height: Float
     
+    private var _extrinsics: [simd_float4]
+    
     /// The 4x4 matrix that contains the plane's orientation and position.
-    public var extrinsics: simd_float4x4
+    public var extrinsics: simd_float4x4 {
+        get { .init(from: _extrinsics) }
+        set { _extrinsics = newValue.columnArray }
+    }
     
     /// Initializes `Plane` with the given `width`, `height`, and extrinsic parameters (`extrinsics`.)
     public init(width: Float, height: Float, extrinsics: simd_float4x4) {
         self.width = width
         self.height = height
-        self.extrinsics = extrinsics
+        self._extrinsics = extrinsics.columnArray
     }
 }
 
-extension Plane: Hashable, Codable {
-    
-    enum CodingKeys: MatrixCodingKey {
-        case width, height
-        case column0, column1, column2, column3
-    }
-    
-    public init(from decoder: any Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let width = try container.decode(Float.self, forKey: .width)
-        let height = try container.decode(Float.self, forKey: .height)
-        let extrinsics = try decodeMatrix(from: container)
-        self.init(width: width, height: height,
-                  extrinsics: extrinsics)
-    }
-    
-    public func encode(to encoder: any Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(width, forKey: .width)
-        try container.encode(height, forKey: .height)
-        try encodeMatrix(extrinsics, to: &container)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(width)
-        hasher.combine(height)
-        combineMatrix(extrinsics, into: &hasher)
-    }
-}
+//extension Plane: Hashable, Codable {
+//    
+//    enum CodingKeys: MatrixCodingKey {
+//        case width, height
+//        case column0, column1, column2, column3
+//    }
+//    
+//    public init(from decoder: any Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        let width = try container.decode(Float.self, forKey: .width)
+//        let height = try container.decode(Float.self, forKey: .height)
+//        let extrinsics = try decodeMatrix(from: container)
+//        self.init(width: width, height: height,
+//                  extrinsics: extrinsics)
+//    }
+//    
+//    public func encode(to encoder: any Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(width, forKey: .width)
+//        try container.encode(height, forKey: .height)
+//        try encodeMatrix(extrinsics, to: &container)
+//    }
+//    
+//    public func hash(into hasher: inout Hasher) {
+//        hasher.combine(width)
+//        hasher.combine(height)
+//        combineMatrix(extrinsics, into: &hasher)
+//    }
+//}
 
 public extension Plane {
     
