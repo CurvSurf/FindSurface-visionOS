@@ -72,7 +72,7 @@ FindSurface works based on these values and requires additional parameters such 
 
 Based on our analysis, we recommend the following adjustments to the **optimal set of parameters**:
 
-- Accuracy: ~~1.5 cm~~ → 2.0 cm or 2.5 cm
+- Accuracy: ~~1.5 cm~~ → 2.0 cm ~ 2.5 cm
 - Mean Distance: ~~10 cm~~ → 5 cm
 - Seed Radius: 1/10 ~ 1/2 of object's diameter/width in centimeter (10 cm as default and 5 cm as minimum)
 - Lat. Ext.: ~~10~~ → off
