@@ -59,13 +59,25 @@ Once measurement points are collected, `measurement accuracy` and `mean distance
 
 FindSurface works based on these values and requires additional parameters such as the `seed radius`, which is proportional to the approximate diameter of objects to be detected/measured, and `lateral extension`/`radial expansion` for region growing, depending on the lengths/widths of the objects if necessary.
 
-From our continuous testing of FindSurface in various environments on Apple Vision Pro, we have determined the following optimal set of parameters:
+> **NOTE**: With the recent **visionOS 2.1 update**, we noticed significant changes in the data provided by the **`MeshAnchor`** on Apple Vision Pro. (*The following observations are based on our own analysis through our app and are not officially mentioned in Apple's patch notes.*)
+>
+>1. The **coverage of individual `MeshAnchor`** has decreased, while the **number of anchors** has increased.
+>2. The **quad sizes** in the mesh data (formed by two adjacent triangles with shared edges) have changed. Previously, a mix of **12 x 12 cm** and **6 x 6 cm** quads were commonly observed. After the update, most quads are now **6 x 6 cm**, and **12 x 12 cm** quads seem to no longer appear. It means the number of vertices has increased for the same coverage.
+>
+>These changes result in an **increase in the resolution of the `MeshAnchor` data** with a corresponding decrease in the smoothing effect due to mesh generation. While this allows for more detailed representation of the convex/concave characteristics of real-world geometry, the **orthogonal distance error of mesh vertices** to the actual geometry surface tends to become **more variable** (i.e., increased points with errors).
+>
+>Since the characteristics of the mesh data provided by Apple Vision Pro have changed, the **optimal parameter values for FindSurface** must also be updated. 
+>
+> Our sample apps' source code reflects these parameter changes as the new defaults. However, since these parameters are overwritten by user-defined values stored via `UserDefaults`, they need to be manually adjusted by the user in previously installed app.
 
-- Accuracy: 1.5 cm
-- Mean Distance: 10 cm
-- Seed Radius: 1/4 ~ 1/2 of object's diameter/width in centimeter
-- Lat. Ext.: 10
+Based on our analysis, we recommend the following adjustments to the **optimal set of parameters**:
+
+- Accuracy: ~~1.5 cm~~ → 2.0 cm or 2.5 cm
+- Mean Distance: ~~10 cm~~ → 5 cm
+- Seed Radius: 1/10 ~ 1/2 of object's diameter/width in centimeter (10 cm as default and 5 cm as minimum)
+- Lat. Ext.: ~~10~~ → off
 - Rad. Exp.: 5
+
 
 As an Apple Vision Pro user, you only need to set the seed radius proportional to the size of the object using the above parameter presets as default. For planes having small areas or short cylinders/cones, it is recommended to set the lateral extension to below `5`. To detect or measure an object smaller than 1 meter (although we don't recommend it), set the radial expansion to `4` or less.
 
