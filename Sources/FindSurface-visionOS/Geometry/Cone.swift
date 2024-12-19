@@ -36,45 +36,9 @@ public struct Cone: GeometryObject {
         self.height = height
         self.topRadius = topRadius
         self.bottomRadius = bottomRadius
-//        self.extrinsics = extrinsics
         self._extrinsics = extrinsics.columnArray
     }
 }
-
-//extension Cone: Hashable, Codable {
-//    
-//    enum CodingKeys: MatrixCodingKey {
-//        case height, topRadius, bottomRadius
-//        case column0, column1, column2, column3
-//    }
-//    
-//    public init(from decoder: any Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let height = try container.decode(Float.self, forKey: .height)
-//        let topRadius = try container.decode(Float.self, forKey: .topRadius)
-//        let bottomRadius = try container.decode(Float.self, forKey: .bottomRadius)
-//        let extrinsics = try decodeMatrix(from: container)
-//        self.init(height: height, 
-//                  topRadius: topRadius, 
-//                  bottomRadius: bottomRadius,
-//                  extrinsics: extrinsics)
-//    }
-//    
-//    public func encode(to encoder: any Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(height, forKey: .height)
-//        try container.encode(topRadius, forKey: .topRadius)
-//        try container.encode(bottomRadius, forKey: .bottomRadius)
-//        try encodeMatrix(extrinsics, to: &container)
-//    }
-//    
-//    public func hash(into hasher: inout Hasher) {
-//        hasher.combine(height)
-//        hasher.combine(topRadius)
-//        hasher.combine(bottomRadius)
-//        combineMatrix(extrinsics, into: &hasher)
-//    }
-//}
 
 public extension Cone {
     

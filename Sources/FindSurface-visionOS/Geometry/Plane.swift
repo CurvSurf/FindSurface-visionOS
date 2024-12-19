@@ -35,36 +35,6 @@ public struct Plane: GeometryObject {
     }
 }
 
-//extension Plane: Hashable, Codable {
-//    
-//    enum CodingKeys: MatrixCodingKey {
-//        case width, height
-//        case column0, column1, column2, column3
-//    }
-//    
-//    public init(from decoder: any Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let width = try container.decode(Float.self, forKey: .width)
-//        let height = try container.decode(Float.self, forKey: .height)
-//        let extrinsics = try decodeMatrix(from: container)
-//        self.init(width: width, height: height,
-//                  extrinsics: extrinsics)
-//    }
-//    
-//    public func encode(to encoder: any Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(width, forKey: .width)
-//        try container.encode(height, forKey: .height)
-//        try encodeMatrix(extrinsics, to: &container)
-//    }
-//    
-//    public func hash(into hasher: inout Hasher) {
-//        hasher.combine(width)
-//        hasher.combine(height)
-//        combineMatrix(extrinsics, into: &hasher)
-//    }
-//}
-
 public extension Plane {
     
     /// The normal vector of the plane.

@@ -8,13 +8,6 @@
 import Foundation
 import simd
 
-//protocol MatrixCodingKey: CodingKey {
-//    static var column0: Self { get }
-//    static var column1: Self { get }
-//    static var column2: Self { get }
-//    static var column3: Self { get }
-//}
-
 public protocol GeometryObject: Codable, Hashable {
     
     /// The 4x4 matrix that contains the object's orientation and position.
@@ -52,28 +45,6 @@ public extension GeometryObject {
         .transform(xAxis: xAxis, yAxis: yAxis, zAxis: zAxis, origin: position)
     }
 }
-
-//func encodeMatrix<C>(_ matrix: simd_float4x4, to container: inout KeyedEncodingContainer<C>) throws where C: MatrixCodingKey {
-//    try container.encode(matrix.columns.0, forKey: C.column0)
-//    try container.encode(matrix.columns.1, forKey: C.column1)
-//    try container.encode(matrix.columns.2, forKey: C.column2)
-//    try container.encode(matrix.columns.3, forKey: C.column3)
-//}
-//
-//func decodeMatrix<C>(from container: KeyedDecodingContainer<C>) throws -> simd_float4x4 where C: MatrixCodingKey {
-//    let c0 = try container.decode(simd_float4.self, forKey: C.column0)
-//    let c1 = try container.decode(simd_float4.self, forKey: C.column1)
-//    let c2 = try container.decode(simd_float4.self, forKey: C.column2)
-//    let c3 = try container.decode(simd_float4.self, forKey: C.column3)
-//    return .init(c0, c1, c2, c3)
-//}
-//
-//func combineMatrix(_ matrix: simd_float4x4, into hasher: inout Hasher) {
-//    hasher.combine(matrix.columns.0)
-//    hasher.combine(matrix.columns.1)
-//    hasher.combine(matrix.columns.2)
-//    hasher.combine(matrix.columns.3)
-//}
 
 internal extension simd_float4x4 {
     

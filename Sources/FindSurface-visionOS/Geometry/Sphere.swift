@@ -27,37 +27,9 @@ public struct Sphere: GeometryObject {
     /// Initializes `Sphere` with `radius` and extrinsic parameters (`extrinsics`.)
     public init(radius: Float, extrinsics: simd_float4x4) {
         self.radius = radius
-//        self.extrinsics = extrinsics
         self._extrinsics = extrinsics.columnArray
     }
 }
-
-//extension Sphere: Hashable, Codable {
-//    
-//    enum CodingKeys: MatrixCodingKey {
-//        case radius
-//        case column0, column1, column2, column3
-//    }
-//    
-//    public init(from decoder: any Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let radius = try container.decode(Float.self, forKey: .radius)
-//        let extrinsics = try decodeMatrix(from: container)
-//        self.init(radius: radius, extrinsics: extrinsics)
-//    }
-//    
-//    public func encode(to encoder: any Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(radius, forKey: .radius)
-//        try encodeMatrix(extrinsics, to: &container)
-//    }
-//    
-//    public func hash(into hasher: inout Hasher) {
-//        hasher.combine(radius)
-//        combineMatrix(extrinsics, into: &hasher)
-//    }
-//}
-//}
 
 public extension Sphere {
     

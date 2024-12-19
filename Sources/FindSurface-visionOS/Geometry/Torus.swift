@@ -31,40 +31,9 @@ public struct Torus: GeometryObject {
     public init(meanRadius: Float, tubeRadius: Float, extrinsics: simd_float4x4) {
         self.meanRadius = meanRadius
         self.tubeRadius = tubeRadius
-//        self.extrinsics = extrinsics
         self._extrinsics = extrinsics.columnArray
     }
 }
-
-//extension Torus: Hashable, Codable {
-//    
-//    enum CodingKeys: MatrixCodingKey {
-//        case meanRadius, tubeRadius
-//        case column0, column1, column2, column3
-//    }
-//    
-//    public init(from decoder: any Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let meanRadius = try container.decode(Float.self, forKey: .meanRadius)
-//        let tubeRadius = try container.decode(Float.self, forKey: .tubeRadius)
-//        let extrinsics = try decodeMatrix(from: container)
-//        self.init(meanRadius: meanRadius, tubeRadius: tubeRadius,
-//                  extrinsics: extrinsics)
-//    }
-//    
-//    public func encode(to encoder: any Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(meanRadius, forKey: .meanRadius)
-//        try container.encode(tubeRadius, forKey: .tubeRadius)
-//        try encodeMatrix(extrinsics, to: &container)
-//    }
-//    
-//    public func hash(into hasher: inout Hasher) {
-//        hasher.combine(meanRadius)
-//        hasher.combine(tubeRadius)
-//        combineMatrix(extrinsics, into: &hasher)
-//    }
-//}
 
 public extension Torus {
     
