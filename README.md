@@ -6,7 +6,9 @@
 
 **FindSurface-visionOS** is a Swift package of FindSurface™ library, of which interface is modified to allow you to use its functionalities.
 
-> **NOTE**: `FindSurfaceFramework` (including `FindSurface-visionOS`) provides its functionality for non-commercial purposes within Apple Vision Pro devices. It is internally limited to process input point clouds of **50k points or less**. For commercial uses or use cases that require more than 50k points, please contact to support@curvsurf.com.
+> **NOTE**: `FindSurfaceFramework` (including `FindSurface-visionOS`) provides its functionality for non-commercial purposes within Apple Vision Pro devices. It is internally limited to process input point clouds of **~~50k~~ → 100k points or less**. For commercial uses or use cases that require more than ~~50k~~ → 100k points, please contact to support@curvsurf.com.
+>
+> Starting from version 1.0.5, we have increased the size limit of the input point cloud from 50k to 100k. This adjustment addresses the increased number of vertices from `MeshAnchor` due to changes in visionOS 2.1, which were not officially mentioned by Apple (see [details below](#optimal-parameter-set-for-apple-vision-pro).)
 
 ## Samples
 
