@@ -17,6 +17,7 @@ The followings are sample project repositories to help you get started to make y
 - [FindSurface-RealityKit-visionOS](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS)
 - [FindSurface-RealityKit-visionOS-Response-to-Request](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS-Response-to-Request)
 - [FindSurface-RealityKit-visionOS-Real-Time](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS-Real-Time)
+- [FindSurface-RealityKit-visionOS-Advertisement](https://github.com/CurvSurf/FindSurface-RealityKit-visionOS-Advertisement)
 
 To see how this package's APIs are called in each sample project, please refer to the following links:
 
@@ -30,7 +31,7 @@ To see how this package's APIs are called in each sample project, please refer t
 
 You can import this package by adding the following line to the dependencies in your `Package.swift` file:
 
-````
+```
 dependencies: [
     ...
     .package(utl: "https://github.com/CurvSurf/FindSurface-visionOS", from: "1.0.0")
@@ -42,14 +43,13 @@ targets: [
     ]),
     ...
 ]
-````
+```
 
 Then, add `import FindSurface_visionOS` (note that it is not hyphenated, but underscored in the middle of the words.)
 
 ### Using the XCFramework without the wrapper
 
 This package is a wrapper containing the visionOS version (including the simulator) of the FindSurface XCFramework. You can also refer to the source code of this package to use the framework directly. In that case, import `FindSurfaceFramework` instead.
-
 
 ## Optimal Parameter Set for Apple Vision Pro
 
@@ -63,12 +63,12 @@ FindSurface works based on these values and requires additional parameters such 
 
 > **NOTE**: With the recent **visionOS 2.1 update**, we noticed significant changes in the data provided by the **`MeshAnchor`** on Apple Vision Pro. (*The following observations are based on our own analysis through our app and are not officially mentioned in Apple's patch notes.*)
 >
->1. The **coverage of individual `MeshAnchor`** has decreased, while the **number of anchors** has increased.
->2. The **quad sizes** in the mesh data (formed by two adjacent triangles with shared edges) have changed. Previously, a mix of **12 x 12 cm** and **6 x 6 cm** quads were commonly observed. After the update, most quads are now **6 x 6 cm**, and **12 x 12 cm** quads seem to no longer appear. It means the number of vertices has increased for the same coverage.
+> 1.  The **coverage of individual `MeshAnchor`** has decreased, while the **number of anchors** has increased.
+> 2.  The **quad sizes** in the mesh data (formed by two adjacent triangles with shared edges) have changed. Previously, a mix of **12 x 12 cm** and **6 x 6 cm** quads were commonly observed. After the update, most quads are now **6 x 6 cm**, and **12 x 12 cm** quads seem to no longer appear. It means the number of vertices has increased for the same coverage.
 >
->These changes result in an **increase in the resolution of the `MeshAnchor` data** with a corresponding decrease in the smoothing effect due to mesh generation. While this allows for more detailed representation of the convex/concave characteristics of real-world geometry, the **orthogonal distance error of mesh vertices** to the actual geometry surface tends to become **more variable** (i.e., increased points with errors).
+> These changes result in an **increase in the resolution of the `MeshAnchor` data** with a corresponding decrease in the smoothing effect due to mesh generation. While this allows for more detailed representation of the convex/concave characteristics of real-world geometry, the **orthogonal distance error of mesh vertices** to the actual geometry surface tends to become **more variable** (i.e., increased points with errors).
 >
->Since the characteristics of the mesh data provided by Apple Vision Pro have changed, the **optimal parameter values for FindSurface** must also be updated. 
+> Since the characteristics of the mesh data provided by Apple Vision Pro have changed, the **optimal parameter values for FindSurface** must also be updated.
 >
 > Our sample apps' source code reflects these parameter changes as the new defaults. However, since these parameters are overwritten by user-defined values stored via `UserDefaults`, they need to be manually adjusted by the user in previously installed app.
 
@@ -80,9 +80,7 @@ Based on our analysis, we recommend the following adjustments to the **optimal s
 - Lat. Ext.: ~~10~~ → off
 - Rad. Exp.: 5
 
-
 As an Apple Vision Pro user, you only need to set the seed radius proportional to the size of the object using the above parameter presets as default. For planes having small areas or short cylinders/cones, it is recommended to set the lateral extension to below `5`. To detect or measure an object smaller than 1 meter (although we don't recommend it), set the radial expansion to `4` or less.
-
 
 ## About License
 
@@ -90,11 +88,10 @@ You may use the source code of this package freely under MIT license, as the lic
 
 About the framework, refer to the following statement:
 
-````
+```
 Copyright (c) 2024 CurvSurf, Inc. All rights reserved.
 
-The framework `FindSurface-visionOS.xcframework` and `FindSurfaceFramework.framework`'s 
-ownership is solely on CurvSurf, Inc. and anyone can use it for non-commercial purposes. 
+The framework `FindSurface-visionOS.xcframework` and `FindSurfaceFramework.framework`'s
+ownership is solely on CurvSurf, Inc. and anyone can use it for non-commercial purposes.
 Contact to support@curvsurf.com for commercial use of the library.
-````
-
+```
